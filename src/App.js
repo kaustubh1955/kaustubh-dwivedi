@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Main from "./layouts/Main"; // fallback for lazy pages
 import "./static/css/main.scss"; // All of our styles
 
@@ -17,19 +17,19 @@ const Resume = lazy(() => import("./pages/Resume"));
 const Stats = lazy(() => import("./pages/Stats"));
 
 const App = () => (
-  <HashRouter basename={PUBLIC_URL}>
+  <BrowserRouter basename={PUBLIC_URL}>
     <Suspense fallback={<Main />}>
       <Switch>
         <Route exact path="/" component={Index} />
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/projects" component={Projects} />
         <Route path="/stats" component={Stats} />
         <Route path="/contact" component={Contact} />
         <Route path="/resume" component={Resume} />
         <Route component={NotFound} status={404} />
       </Switch>
     </Suspense>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default App;
