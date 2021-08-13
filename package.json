@@ -1,8 +1,8 @@
 {
+  "homepage": "http://kaustubh1955.github.io/kaustubh-dwivedi",
   "name": "kaustubh-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kaustubh1955.github.io/kaustubh.dwivedi",
   "engines": {
     "node": "14.x",
     "npm": "6.x"
